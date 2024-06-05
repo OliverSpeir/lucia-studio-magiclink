@@ -1,0 +1,25 @@
+{
+  "name": "lucia-studio-magiclink",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/db": "^0.11.4",
+    "@astrojs/vercel": "^7.6.0",
+    "@lucia-auth/adapter-sqlite": "^3.0.1",
+    "astro": "^4.9.2",
+    "lucia": "^3.2.0",
+    "lucia-adapter-astrodb": "^0.0.9",
+    "oslo": "^1.2.0",
+    "resend": "^3.2.0",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.2+sha1.907f57a52517de34399d66401bf220a549e47b57"
+}

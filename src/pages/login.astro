@@ -1,0 +1,127 @@
+---
+// import { db, User } from "astro:db";
+// import { lucia } from "../auth";
+
+// const userFromDB = await db.select().from(User);
+// const { id: userId } = userFromDB[0]!;
+
+// const session = await lucia.createSession(userId, {});
+// const sessionCookie = lucia.createSessionCookie(session.id);
+// if (session) {
+//   Astro.cookies.set(
+//     sessionCookie.name,
+//     sessionCookie.value,
+//     sessionCookie.attributes
+//   );
+//   return Astro.redirect("/");
+// }
+
+// <html>
+//   <head>
+//     <title>Login Page</title>
+//   </head>
+//   <body>
+//     <h1>Login Page</h1>
+
+//     <!-- Sign In Form -->
+//     <form id="signInForm">
+//       <input
+//         type="email"
+//         name="email"
+//         required
+//         placeholder="Enter your email"
+//       />
+//       <button type="submit">Sign In</button>
+//     </form>
+
+//     <!-- Sign Up Form -->
+//     <form id="signUpForm">
+//       <input
+//         type="email"
+//         name="email"
+//         required
+//         placeholder="Enter your email to sign up"
+//       />
+//       <button type="submit">Sign Up</button>
+//     </form>
+
+//     <script>
+//       const handleSignIn = (event: SubmitEvent) => {
+//         event.preventDefault();
+//         const form = event.target as HTMLFormElement;
+//         const formData = new FormData(form);
+//         const email = formData.get("email");
+
+//         fetch("/api/signin", {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({ email }),
+//         })
+//           .then((response: Response) => {
+//             if (response.ok) {
+//               window.location.href = "/";
+//             } else {
+//               alert("Sign in failed. Please check your email and try again.");
+//             }
+//           })
+//           .catch(() => {
+//             alert("Network error. Please try again later.");
+//           });
+//       };
+
+//       const handleSignUp = (event: SubmitEvent) => {
+//         event.preventDefault();
+//         const form = event.target as HTMLFormElement;
+//         const formData = new FormData(form);
+//         const email = formData.get("email");
+
+//         fetch("/api/signup", {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({ email }),
+//         })
+//           .then((response: Response) => {
+//             if (response.ok) {
+//               window.location.href = "/";
+//             } else {
+//               alert("Signup failed. Please try again.");
+//             }
+//           })
+//           .catch(() => {
+//             alert("Network error. Please try again later.");
+//           });
+//       };
+
+//       document
+//         .getElementById("signInForm")
+//         ?.addEventListener("submit", handleSignIn);
+//       document
+//         .getElementById("signUpForm")
+//         ?.addEventListener("submit", handleSignUp);
+//     </script>
+//   </body>
+// </html>
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+  </head>
+  <body>
+    <h1>Login Page</h1>
+
+    <form action="/api/signin" method="POST">
+      <input type="email" name="email" required placeholder="email address" />
+      <button>Sign In</button>
+    </form>
+
+    <form action="/api/signup" method="POST">
+      <input type="email" name="email" required placeholder="email address" />
+      <button>Sign Up</button>
+    </form>
+  </body>
+</html>
