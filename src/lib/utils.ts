@@ -9,7 +9,7 @@ export const sendEmail = async (userEmail: string, verificationLink: string) => 
   const from = "🧙 <onboarding@resend.dev>";
   const to = userEmail;
   const subject = "Magic Link 🪄";
-  const html = `<p>Sign in with this Magic Link: <a href="${verificationLink}"> Sign In </a></p>`;
+  const html = `<p>Sign in with this Magic Link: <a href="${verificationLink}" rel="noreferrer"> Sign In </a></p>`;
 
   const send = await resend.emails.send({
     from,
