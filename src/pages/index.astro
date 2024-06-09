@@ -3,7 +3,7 @@ const user = Astro.locals.user;
 if (!user) {
   return Astro.redirect("/login");
 }
-const session = Astro.locals.session!;
+const { session } = Astro.locals;
 ---
 
 <html lang="en">
@@ -18,7 +18,7 @@ const session = Astro.locals.session!;
     <h1>Signed in</h1>
     <p>Your email is: {user.email}</p>
     <p>Your user ID is: {user.id}.</p>
-    <p>Youre session ID is: {session.id}</p>
+    <p>Youre session ID is: {session?.id}</p>
     <form method="post" action="/api/logout" id="logout">
       <button>Sign out</button>
     </form>
