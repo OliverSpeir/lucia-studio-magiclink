@@ -10,6 +10,9 @@ export default defineConfig({
       exclude: ["astro:db"]
     }
   },
+  security: {
+    checkOrigin: true
+  },
   adapter: vercel(),
   integrations: [db()]
 });
